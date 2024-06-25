@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace SimpleEcommerce.Infrastructure.Models
 {
-    public class EcommerceContext : DbContext 
+    public class EcommerceContext : IdentityDbContext<User> 
     {
         public EcommerceContext(DbContextOptions<EcommerceContext> options) : base(options) { }
         public DbSet<Discount> Discounts { get; set; }
